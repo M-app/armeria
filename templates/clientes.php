@@ -20,6 +20,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
@@ -141,7 +142,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Todos los Clientes</h4>
                   <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="tabla-clientes">
                       <thead>
                         <tr>
                           <th>
@@ -234,6 +235,27 @@
   <script src="../js/off-canvas.js"></script>
   <script src="../js/hoverable-collapse.js"></script>
   <script src="../js/template.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/datatables.min.js"></script>
+  <script>
+    $(document).ready( function () {
+      var tabla = $("tabla-clientes").DataTable({
+          columnDefs: [ {
+            targets: [ 0 ],
+            orderData: [ 0, 1 ]
+          }, {
+            targets: [ 1 ],
+            orderData: [ 1, 0 ]
+          },
+          {
+            targets: [ 4 ],
+            orderData: [ 4, 0 ]
+          }
+          ]}
+        );
+      
+    });
+  </script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="../js/file-upload.js"></script>
