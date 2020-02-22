@@ -1,0 +1,2 @@
+use basesheriff;
+CALL pinsertcliente(11,'asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads','asdfads');

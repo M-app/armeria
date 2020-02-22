@@ -1,0 +1,29 @@
+para mostrar la base de datos
+**********************************************************************************
+$query = "SELECT nombre_usuario,privilegio FROM usuario";
+
+$result = mysqli_query($conexion,$query);
+if ($row = mysqli_fetch_array($result)){
+ echo "<table border = '1'> \n";
+ echo "<tr><td>Nombre</td><td>E-privilegio</td></tr> \n";
+ do {
+    echo "<tr><td>".$row["nombre_usuario"]."</td><td>".$row["privilegio"]."</td></tr> \n";
+ } while ($row = mysqli_fetch_array($result));
+ echo "</table> \n";
+} else {
+echo "¡ No se ha encontrado ningún registro !";
+}
+**********************************************************************************
+while ($fila = mysqli_fetch_array($resulta)) {
+  echo "$fila[nombre_usuario]<br />";
+  echo "$fila[privilegio]<br />";
+}
+if ($resulta == true) {
+  echo "es verdadero";
+}
+else {
+  echo "es falso";
+}
+
+
+**********************************************************************************
