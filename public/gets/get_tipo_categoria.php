@@ -1,6 +1,6 @@
 <?php 
 
-	require_once('conexion.php');
+	require_once('../conexion.php');
 
 	class get_tipo_categoria{
 

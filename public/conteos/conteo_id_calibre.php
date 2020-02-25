@@ -1,24 +1,24 @@
 <?php 
-  require_once('conexion.php');
+  require_once('../public/conexion.php');
   /**
    * conteo de id de clientes
    */
-  class conteo_id_tipo_categoria{
+  class conteo_id_calibre{
     
-    public $conteo;
+    public $conteo_cal;
 
 
 
     function __construct(){
 
-      $this->conteo;
+      $this->conteo_cal;
     }
 
-    public function get_conteo_id_tipo_categoria(){
+    public function get_conteo_id_calibre(){
       $mysql = new conexion_db();
       $conection = $mysql->get_conexion();
 
-      $consulta = "SELECT id_tipo_categoria FROM tipo_categoria";
+      $consulta = "SELECT id_calibre FROM calibre";
 
       $resultado = mysqli_query($conection,$consulta);
          //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
@@ -31,10 +31,10 @@
         for ($j=1; $j <= $num; $j++) { 
               
         }
-          $this->conteo = $fila['id_tipo_categoria'];
+          $this->conteo_cal = $fila['id_calibre'];
       }
 
-        return (int)$this->conteo+1;
+        return (int)$this->conteo_cal+1;
     }
   }
  

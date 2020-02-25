@@ -174,7 +174,7 @@
                        
                         
                         <?php 
-
+                          
                           $mysql = new conexion_db();
                           $conection = $mysql->get_conexion();
 

@@ -1,6 +1,6 @@
 <?php 
-	require_once('get_datos_calibre.php');
-	require_once('conexion.php');
+	require_once('../gets/get_datos_calibre.php');
+	require_once('../conexion.php');
  	//obtenemos los datos del formulario
 	 $mostrar = new get_datos_calibre();
 	 //creamos un nuevo objeto para la conexion
@@ -27,7 +27,7 @@ $datos = array(
 	 $statement->close();
 	 mysqli_close($cone);
 
-	 header('location: ../templates/calibres.php');
+	 header('location: ../../templates/calibres.php');
  
  ?>
 

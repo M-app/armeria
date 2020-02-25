@@ -158,62 +158,6 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Nombre</label>
-                          <div class="col-sm-9">
-                            <input type="text" id="nombre-producto" name="nombre_producto" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Descripción 1</label>
-                          <div class="col-sm-9">
-                            <input type="text" name="descripcion_1" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">No. Registro</label>
-                          <div class="col-sm-9">
-                            <input type="text" name="numero_registro" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Disponibilidad</label>
-                          <div class="col-sm-9">
-                            <input type="text" name="disponibilidad" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">No. Lote</label>
-                          <div class="col-sm-9">
-                            <input type="text" name="lote" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Precio Compra</label>
-                          <div class="col-sm-9">
-                            <input type="text" name="precio_compra" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Precio Venta</label>
-                          <div class="col-sm-9">
-                            <input type="text" name="precio_venta" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Categoría</label>
                           <div class="col-sm-9">
                             <select id="selectCategoria" class="form-control" name="dato_categoria">
@@ -382,53 +326,72 @@
                              </select>
                           </div>
                         </div>
-                      </div>                      
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Nombre</label>
+                          <div class="col-sm-9">
+                            <input type="text" id="nombre-producto" name="nombre_producto" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Descripción 1</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="descripcion_1" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">No. Registro</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="numero_registro" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Disponibilidad</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="disponibilidad" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">No. Lote</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="lote" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Precio Compra</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="precio_compra" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Precio Venta</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="precio_venta" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                                            
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Listo</button>
                    
                   </form>
-                  <div>
-                    <button id="btn-abrir-popup"  class="btn btn-danger">Nueva </button>
-                  <div class="overlay" id="overlay">
-                    <div class="popup" id="popup">
-                      <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                      <h3>SUSCRIBETE</h3>
-                      <h4>y recibe un cupon de descuento.</h4>
-                      <form action="">
-                        <div class="contenedor-inputs">
-                          <input type="text" placeholder="Nombre">
-                          <input type="email" placeholder="Correo">
-                          <input type="text" placeholder="hola">
-                          <input type="text" placeholder="hola">
-                          <input type="text" placeholder="hola">
-                        </div>
-                        <input type="submit" class="btn-submit" value="Suscribirse">
-                    </form>
-                    </div>
-                  </div>
-                  </div>
+                  
                   
                   </div>
-                  <div>
-                    <button id="btn-abrir-popup2"  class="btn btn-danger">Nueva Categoría</button>
-                  <div class="overlay" id="overlay2">
-                    <div class="popup" id="popup2">
-                      <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                      <h3>SUSCRIBETE</h3>
-                      <h4>y recibe un cupon de descuento.</h4>
-                      <form action="">
-                        <div class="contenedor-inputs">
-                          <input type="text" placeholder="Nombre">
-                          <input type="email" placeholder="Correo">
-                          <input type="text" placeholder="hola">
-                          <input type="text" placeholder="hola">
-                          <input type="text" placeholder="hola">
-                        </div>
-                        <input type="submit" class="btn-submit" value="Suscribirse">
-                    </form>
-                    </div>
-                  </div>
-                  </div>
+                  
               </div>
             </div>
         </div>

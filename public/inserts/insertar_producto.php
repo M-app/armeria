@@ -1,6 +1,6 @@
 <?php 
-	require_once('get_producto.php');
-	require_once('conexion.php');
+	require_once('../public/gets/get_producto.php');
+	require_once('../public/conexion.php');
  	//obtenemos los datos del formulario
 	 $mostrar = new get_producto();
 	 //creamos un nuevo objeto para la conexion
@@ -51,6 +51,6 @@ $datos = array(
 	 mysqli_close($cone);
 	 echo var_dump($datos);
 
-	 header('location: ../templates/productos.php');
+	 header('location: ../../templates/productos.php');
  
  ?>

@@ -1,24 +1,24 @@
 <?php 
-  require_once('conexion.php');
+  require_once('../public/conexion.php');
   /**
    * conteo de id de clientes
    */
-  class conteo_id_marca{
+  class conteo_id_modelo{
     
-    public $conteo_mar;
+    public $conteo_mod;
 
 
 
     function __construct(){
 
-      $this->conteo_mar;
+      $this->conteo_mod;
     }
 
-    public function get_conteo_id_marca(){
+    public function get_conteo_id_modelo(){
       $mysql = new conexion_db();
       $conection = $mysql->get_conexion();
 
-      $consulta = "SELECT id_marca FROM marca";
+      $consulta = "SELECT id_modelo FROM modelo";
 
       $resultado = mysqli_query($conection,$consulta);
          //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
@@ -31,10 +31,10 @@
         for ($j=1; $j <= $num; $j++) { 
               
         }
-          $this->conteo_mar = $fila['id_marca'];
+          $this->conteo_mod = $fila['id_modelo'];
       }
 
-        return (int)$this->conteo_mar+1;
+        return (int)$this->conteo_mod+1;
     }
   }
  

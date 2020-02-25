@@ -1,5 +1,5 @@
 <?php 
-  require_once('../public/conteo_id_marca.php');
+  require_once('../public/conteos/conteo_id_marca.php');
  ?>
 
 <!DOCTYPE html>
@@ -132,7 +132,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Por favor, ingresar los datos en el formulario</h4>
-                  <form class="form-sample" action="../public/insertar_marca.php" method="POST">
+                  <form class="form-sample" action="../public/inserts/insertar_marca.php" method="POST">
                     <p class="card-description">
                       Información de Marca
                     </p>
@@ -143,8 +143,8 @@
                           <div class="col-sm-9">
                             <input type="text" name="id_marca" class="form-control" readonly="readonly"
                             <?php 
-                              $con_mar = new conteo_id_descripcion();
-                              $new_id = $con_mar->get_conteo_id_descripcion();
+                              $con_mar = new conteo_id_marca();
+                              $new_id = $con_mar->get_conteo_id_marca();
                               echo 'value="'.$new_id.'"';
                              ?>
                             >

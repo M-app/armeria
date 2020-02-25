@@ -1,6 +1,6 @@
 <?php 
-	require_once('get_tipo_categoria.php');
-	require_once('conexion.php');
+	require_once('../public/gets/get_tipo_categoria.php');
+	require_once('../public/conexion.php');
  	//obtenemos los datos del formulario
 	 $mostrar = new get_tipo_categoria();
 	 //creamos un nuevo objeto para la conexion
@@ -34,6 +34,6 @@ $datos = array(
 	 
 	// echo var_dump($datos);
 
-	 header('location: ../templates/tipoCategoria.php');
+	 header('location: ../../templates/tipoCategoria.php');
  
  ?>

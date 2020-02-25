@@ -1,8 +1,8 @@
 <?php 
-	require_once('get_datos_modelo.php');
-	require_once('conexion.php');
+	require_once('../gets/get_marca.php');
+	require_once('../conexion.php');
  	//obtenemos los datos del formulario
-	 $mostrar = new get_datos_modelo();
+	 $mostrar = new get_marca();
 	 //creamos un nuevo objeto para la conexion
 	 $mysql = new conexion_db();
 	 $cone = $mysql->get_conexion();
@@ -10,24 +10,24 @@
 //con este metodo evitamos sql injection
 
 $datos = array(
-	//$id_modelo=(int)$mostrar->pasar_datos_modelo()[0],
-	$nombre_modelo=$mostrar->pasar_datos_modelo()[0],
+	//$id_marca=(int)$mostrar->pasar_marca()[0],
+	$nombre_marca=$mostrar->pasar_marca()[0],
 	
 
 );
 
 	 /*echo var_dump($datos);*/
-	 $statement = $cone->prepare("CALL PImodelo(?);");
+	 $statement = $cone->prepare("CALL PImarca(?);");
 	 $statement->bind_param("s",
-	 	//$id_modelo,
-	 	$nombre_modelo
+	 	//$id_marca,
+	 	$nombre_marca
 	 	
 	 );
 	 $statement->execute();
 	 $statement->close();
 	 mysqli_close($cone);
 
-	 header('location: ../templates/modelo.php');
+	 header('location: ../../templates/marcas.php');
  
  ?>
 

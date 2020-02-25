@@ -1,5 +1,5 @@
 <?php 
-  require_once('../public/conteo_id_cliente.php');  
+  require_once('../public/conteos/conteo_id_cliente.php');  
  ?>
 
 <!DOCTYPE html>
@@ -123,7 +123,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Por favor, ingresar los datos en el formulario</h4>
-                  <form class="form-sample" action="../public/insertar_datos_cliente.php" method="POST">
+                  <form class="form-sample" action="../public/inserts/insertar_datos_cliente.php" method="POST">
                     <p class="card-description">
                       Información Personal
                     </p>
@@ -261,12 +261,96 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Tipo de Arma</label>
+                          <label class="col-sm-3 col-form-label">Tipo de Arma 1</label>
                           <div class="col-sm-9">
                             <select class="form-control" name="tipo_arma">
-                              <option>Pistola</option>
-                              <option>Escopeta</option>
-                              <option>Rifle</option>
+                              <option>Seleccionar</option>
+                              <?php 
+                                $mysql = new conexion_db();
+                                $conection = $mysql->get_conexion();
+
+                                $consulta = "SELECT * FROM tipo_categoria";
+
+                                 $resultado = mysqli_query($conection,$consulta);
+                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
+                                 $num = mysqli_num_rows($resultado);
+                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                // echo var_dump($num);
+                                  for ($i=0; $i <$num; $i++) { 
+                                  mysqli_data_seek($resultado, $i);
+                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                    for ($j=1; $j <= $num; $j++) { 
+                                      
+                                  }
+                                  echo"<option identificador='"
+                                  .$fila['id_tipo_categoria']."'>"
+                                  .$fila['nombre_tipo_arma']."</option>";
+                                }
+                              ?>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Tipo de Arma 2</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="tipo_arma">
+                              <option>Seleccionar</option>
+                              <?php 
+                                $mysql = new conexion_db();
+                                $conection = $mysql->get_conexion();
+
+                                $consulta = "SELECT * FROM tipo_categoria";
+
+                                 $resultado = mysqli_query($conection,$consulta);
+                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
+                                 $num = mysqli_num_rows($resultado);
+                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                // echo var_dump($num);
+                                  for ($i=0; $i <$num; $i++) { 
+                                  mysqli_data_seek($resultado, $i);
+                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                    for ($j=1; $j <= $num; $j++) { 
+                                      
+                                  }
+                                  echo"<option identificador='"
+                                  .$fila['id_tipo_categoria']."'>"
+                                  .$fila['nombre_tipo_arma']."</option>";
+                                }
+                              ?>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Tipo de Arma 3</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="tipo_arma">
+                              <option>Seleccionar</option>
+                              <?php 
+                                $mysql = new conexion_db();
+                                $conection = $mysql->get_conexion();
+
+                                $consulta = "SELECT * FROM tipo_categoria";
+
+                                 $resultado = mysqli_query($conection,$consulta);
+                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
+                                 $num = mysqli_num_rows($resultado);
+                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                // echo var_dump($num);
+                                  for ($i=0; $i <$num; $i++) { 
+                                  mysqli_data_seek($resultado, $i);
+                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                    for ($j=1; $j <= $num; $j++) { 
+                                      
+                                  }
+                                  echo"<option identificador='"
+                                  .$fila['id_tipo_categoria']."'>"
+                                  .$fila['nombre_tipo_arma']."</option>";
+                                }
+                              ?>
                             </select>
                           </div>
                         </div>
@@ -291,7 +375,23 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Tenencia</label>
+                          <label class="col-sm-3 col-form-label">Tenencia 1</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="tenencia" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Tenencia 2</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="tenencia" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Tenencia 3</label>
                           <div class="col-sm-9">
                             <input type="text" name="tenencia" class="form-control">
                           </div>
@@ -301,7 +401,23 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Calibre</label>
+                          <label class="col-sm-3 col-form-label">Calibre 1</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="calibre" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Calibre 2</label>
+                          <div class="col-sm-9">
+                            <input type="text" name="calibre" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Calibre 3</label>
                           <div class="col-sm-9">
                             <input type="text" name="calibre" class="form-control">
                           </div>

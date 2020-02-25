@@ -1,5 +1,5 @@
 <?php 
-  require_once('../public/conteo_id_modelo.php');
+  require_once('../public/conteos/conteo_id_modelo.php');
  ?>
 
 <!DOCTYPE html>
@@ -132,7 +132,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Por favor, ingresar los datos en el formulario</h4>
-                  <form class="form-sample" action="../public/insertar_datos_modelo.php" method="POST">
+                  <form class="form-sample" action="../public/inserts/insertar_datos_modelo.php" method="POST">
                     <p class="card-description">
                       Información de Modelo
                     </p>

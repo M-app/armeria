@@ -1,6 +1,6 @@
 <?php 
-	require_once('get_proveedor.php');
-	require_once('conexion.php');
+	require_once('../public/gets/get_proveedor.php');
+	require_once('../public/conexion.php');
  	//obtenemos los datos del formulario
 	 $mostrar = new get_proveedor();
 	 //creamos un nuevo objeto para la conexion
@@ -29,7 +29,7 @@ $datos = array(
 	 $statement->close();
 	 mysqli_close($cone);
 
-	 header('location: ../templates/proveedores.php');
+	 header('location: ../../templates/proveedores.php');
  
  ?>
 
