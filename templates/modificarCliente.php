@@ -1,5 +1,6 @@
 <?php 
-  require_once('../public/conteos/conteo_id_cliente.php');  
+  require_once('../public/conteos/conteo_id_cliente.php'); 
+  require_once('../public/conexion.php'); 
  ?>
 
 <!DOCTYPE html>
@@ -263,7 +264,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tipo de Arma 1</label>
                           <div class="col-sm-9">
-                            <select class="form-control" name="tipo_arma">
+                            <select class="form-control" name="tipo_arma_1">
                               <option>Seleccionar</option>
                               <?php 
                                 $mysql = new conexion_db();
@@ -295,7 +296,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tipo de Arma 2</label>
                           <div class="col-sm-9">
-                            <select class="form-control" name="tipo_arma">
+                            <select class="form-control" name="tipo_arma_2">
                               <option>Seleccionar</option>
                               <?php 
                                 $mysql = new conexion_db();
@@ -327,7 +328,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tipo de Arma 3</label>
                           <div class="col-sm-9">
-                            <select class="form-control" name="tipo_arma">
+                            <select class="form-control" name="tipo_arma_3">
                               <option>Seleccionar</option>
                               <?php 
                                 $mysql = new conexion_db();
@@ -377,7 +378,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tenencia 1</label>
                           <div class="col-sm-9">
-                            <input type="text" name="tenencia" class="form-control">
+                            <input type="text" name="tenencia_1" class="form-control">
                           </div>
                         </div>
                       </div>
@@ -385,7 +386,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tenencia 2</label>
                           <div class="col-sm-9">
-                            <input type="text" name="tenencia" class="form-control">
+                            <input type="text" name="tenencia_2" class="form-control">
                           </div>
                         </div>
                       </div>
@@ -393,7 +394,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tenencia 3</label>
                           <div class="col-sm-9">
-                            <input type="text" name="tenencia" class="form-control">
+                            <input type="text" name="tenencia_3" class="form-control">
                           </div>
                         </div>
                       </div>
@@ -403,7 +404,33 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Calibre 1</label>
                           <div class="col-sm-9">
-                            <input type="text" name="calibre" class="form-control">
+                            <select  class="form-control" name="calibre_1">
+                              <option>Seleccionar</option>
+                               <?php 
+
+                                $mysql = new conexion_db();
+                                $conection = $mysql->get_conexion();
+
+                                $consulta = "SELECT nombre_calibre FROM calibre";
+
+                                 $resultado = mysqli_query($conection,$consulta);
+                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
+                                 $num = mysqli_num_rows($resultado);
+                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                // echo var_dump($num);
+                                  for ($i=0; $i <$num; $i++) { 
+                                  mysqli_data_seek($resultado, $i);
+                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                    for ($j=1; $j <= $num; $j++) { 
+                                      
+                                    }                  
+                                  echo "<option identificador='"
+                                  .$fila['nombre_calibre']."'>"
+                                  .$fila['nombre_calibre']."</option>";
+                                
+                                }
+                               ?>
+                             </select>
                           </div>
                         </div>
                       </div>
@@ -411,7 +438,33 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Calibre 2</label>
                           <div class="col-sm-9">
-                            <input type="text" name="calibre" class="form-control">
+                            <select  class="form-control" name="calibre_2">
+                              <option>Seleccionar</option>
+                               <?php 
+
+                                $mysql = new conexion_db();
+                                $conection = $mysql->get_conexion();
+
+                                $consulta = "SELECT nombre_calibre FROM calibre";
+
+                                 $resultado = mysqli_query($conection,$consulta);
+                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
+                                 $num = mysqli_num_rows($resultado);
+                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                // echo var_dump($num);
+                                  for ($i=0; $i <$num; $i++) { 
+                                  mysqli_data_seek($resultado, $i);
+                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                    for ($j=1; $j <= $num; $j++) { 
+                                      
+                                    }                  
+                                  echo "<option identificador='"
+                                  .$fila['nombre_calibre']."'>"
+                                  .$fila['nombre_calibre']."</option>";
+                                
+                                }
+                               ?>
+                             </select>
                           </div>
                         </div>
                       </div>
@@ -419,7 +472,33 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Calibre 3</label>
                           <div class="col-sm-9">
-                            <input type="text" name="calibre" class="form-control">
+                            <select  class="form-control" name="calibre_3">
+                              <option>Seleccionar</option>
+                               <?php 
+
+                                $mysql = new conexion_db();
+                                $conection = $mysql->get_conexion();
+
+                                $consulta = "SELECT nombre_calibre FROM calibre";
+
+                                 $resultado = mysqli_query($conection,$consulta);
+                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
+                                 $num = mysqli_num_rows($resultado);
+                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                // echo var_dump($num);
+                                  for ($i=0; $i <$num; $i++) { 
+                                  mysqli_data_seek($resultado, $i);
+                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                                    for ($j=1; $j <= $num; $j++) { 
+                                      
+                                    }                  
+                                  echo "<option identificador='"
+                                  .$fila['nombre_calibre']."'>"
+                                  .$fila['nombre_calibre']."</option>";
+                                
+                                }
+                               ?>
+                             </select>
                           </div>
                         </div>
                       </div>

@@ -21,6 +21,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
@@ -43,11 +44,11 @@
           <li class="nav-item nav-search d-none d-lg-block w-100">
             <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="search">
+                <span class="input-group-text" >
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Buscar" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control" placeholder="Buscar" aria-label="search" aria-describedby="search" id="input-buscar">
             </div>
           </li>
         </ul>
@@ -129,8 +130,8 @@
                     <a href="./modificarCliente.php">
                       <button type="button" class="btn btn-success">Nuevo</button>
                     </a>
-                    <button type="button" class="btn btn-warning">Modificar</button>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <!-- <button type="button" class="btn btn-warning">Modificar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button> -->
                   </div>
                 </div>
               </div>
@@ -142,7 +143,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Todos los Clientes</h4>
                   <div class="table-responsive">
-                    <table class="table table-striped" id="tabla-clientes">
+                    <table class="table table-striped" id="tabla-datos">
                       <thead>
                         <tr>
                           <th>
@@ -152,7 +153,13 @@
                             Nombre
                           </th>
                           <th>
-                            Tenencia
+                            Tenencia 1
+                          </th>
+                          <th>
+                            Tenencia 2
+                          </th>
+                          <th>
+                            Tenencia 3
                           </th>
                           <th>
                             Licencia  
@@ -179,7 +186,7 @@
                           $mysql = new conexion_db();
                           $conection = $mysql->get_conexion();
 
-                          $consulta = "SELECT id_cliente,nombre_cliente,tenencia_arma,numero_licencia,dpi_cliente,nit_cliente,telefono_cliente FROM cliente";
+                          $consulta = "SELECT id_cliente,nombre_cliente,tenencia_arma_1,tenencia_arma_2,tenencia_arma_3,numero_licencia,dpi_cliente,nit_cliente,telefono_cliente FROM cliente";
 
                            $resultado = mysqli_query($conection,$consulta);
                            //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
@@ -195,7 +202,9 @@
 
                             echo"<tr><td>".$fila['id_cliente']."</td></p>";
                             echo "<td>".$fila['nombre_cliente']."</td>";
-                            echo "<td>".$fila['tenencia_arma']."</td>";
+                            echo "<td>".$fila['tenencia_arma_1']."</td>";
+                            echo "<td>".$fila['tenencia_arma_2']."</td>";
+                            echo "<td>".$fila['tenencia_arma_2']."</td>";
                             echo "<td>".$fila['numero_licencia']."</td>";
                             echo "<td>".$fila['dpi_cliente']."</td>";
                             echo "<td>".$fila['nit_cliente']."</td>";
@@ -236,26 +245,8 @@
   <script src="../js/hoverable-collapse.js"></script>
   <script src="../js/template.js"></script>
   <script src="../js/jquery.js"></script>
-  <script src="../js/datatables.min.js"></script>
-  <script>
-    $(document).ready( function () {
-      var tabla = $("tabla-clientes").DataTable({
-          columnDefs: [ {
-            targets: [ 0 ],
-            orderData: [ 0, 1 ]
-          }, {
-            targets: [ 1 ],
-            orderData: [ 1, 0 ]
-          },
-          {
-            targets: [ 4 ],
-            orderData: [ 4, 0 ]
-          }
-          ]}
-        );
-      
-    });
-  </script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="../js/datatables.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="../js/file-upload.js"></script>
