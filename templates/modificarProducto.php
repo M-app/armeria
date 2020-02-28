@@ -143,7 +143,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Por favor, ingresar los datos en el formulario</h4>
-                  <form class="form-sample" action="../public/insertar_producto.php" method="POST">
+                  <form class="form-sample" action="../public/inserts/insertar_producto.php" method="POST">
                     <p class="card-description">
                       Información de Productos
                     </p>

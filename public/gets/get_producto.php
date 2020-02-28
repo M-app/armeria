@@ -5,35 +5,37 @@
 	class get_producto{
 
 		public $codigo_producto;
+    public $dato_categoria;
+    public $tipo_categoria;
+    public $dato_marca;
+    public $dato_modelo;
+    public $dato_calibre;
     public $nombre_producto;
-    public $descripcion_1;
+    public $descripcion;
     public $numero_registro;
     public $disponibilidad;
     public $lote;
     public $precio_compra;
     public $precio_venta;
-    public $dato_categoria;
-		public $tipo_categoria;
-		public $dato_marca;
-		public $dato_modelo;
-		public $dato_calibre;
+    
 		
 
 		function __construct(){
 			
 			$this->codigo_producto = $_POST['codigo_prod'];
+      $this->dato_categoria = $_POST['dato_categoria'];
+      $this->tipo_categoria = $_POST['tipo_categoria'];
+      $this->dato_marca = $_POST['dato_marca'];
+      $this->dato_modelo = $_POST['dato_modelo'];
+      $this->dato_calibre = $_POST['dato_calibre'];
 			$this->nombre_producto = $_POST['nombre_producto'];
-			$this->descripcion_1 = $_POST['descripcion_1'];
+			$this->descripcion = $_POST['descripcion_1'];
 			$this->numero_registro = $_POST['numero_registro'];
 			$this->disponibilidad = $_POST['disponibilidad'];
 			$this->lote = $_POST['lote'];
 			$this->precio_compra = $_POST['precio_compra'];
 			$this->precio_venta = $_POST['precio_venta'];
-			$this->dato_categoria = $_POST['dato_categoria'];
-      $this->tipo_categoria = $_POST['tipo_categoria'];
-      $this->dato_marca = $_POST['dato_marca'];
-      $this->dato_modelo = $_POST['dato_modelo'];
-      $this->dato_calibre = $_POST['dato_calibre'];
+			
 		}
 
 
@@ -187,26 +189,27 @@
 			$datos_producto = array(
 
 				$this->codigo_producto,
+        $this->dato_categoria = $d_categoria,
+        $this->tipo_categoria = $d_tip_cat,
+        $this->dato_marca = $d_mar,
+        $this->dato_modelo = $d_mod,
+        $this->dato_calibre = $d_cal,
 				$this->nombre_producto,
-				$this->descripcion_1,
+				$this->descripcion,
 				$this->numero_registro,
         $this->disponibilidad,
         $this->lote,
         $this->precio_compra,
-        $this->precio_venta,
-				$this->dato_categoria = $d_categoria,
-				$this->tipo_categoria = $d_tip_cat,
-				$this->dato_marca = $d_mar,
-				$this->dato_modelo = $d_mod,
-				$this->dato_calibre = $d_cal
-					
+        $this->precio_venta				
 			);
 			return $datos_producto;
+      
 		}
+
 
 
 }
 
-// echo var_dump($datos_producto)
+
 	
  ?>
