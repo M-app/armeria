@@ -209,7 +209,7 @@
                             echo "<td>".$fila['dpi_cliente']."</td>";
                             echo "<td>".$fila['nit_cliente']."</td>";
                             echo "<td>".$fila['telefono_cliente']."</td>";
-                            echo"<td><a  href='../public/prueba_modificar_cliente.php?link=".$fila['id_cliente']."'>Modificar</a><br>
+                            echo"<td><a  href='../templates/modify/prueba_modificar_cliente.php?link=".$fila['id_cliente']."'>Modificar</a><br>
                                   <a href='/eliminar/cliente/".$fila['id_cliente']."'>Eliminar</a></td></tr>";
                           }
                          ?>

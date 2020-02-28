@@ -28,7 +28,7 @@ $datos = array(
 
 );
 
-	 echo var_dump($datos);
+	 // echo var_dump($datos);
 	 $statement = $cone->prepare("CALL PIproducto(?,?,?,?,?,?,?,?,?,?,?,?,?);");
 	 $statement->bind_param("siiiiisssisdd",
 	 	
@@ -51,6 +51,6 @@ $datos = array(
 	 mysqli_close($cone);
 	 // echo var_dump($datos);
 
-	 // header('location: ../../templates/productos.php');
+	 header('location: ../../templates/productos.php');
  
  ?>
