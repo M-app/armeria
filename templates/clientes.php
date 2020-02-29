@@ -204,7 +204,7 @@
                             echo "<td>".$fila['nombre_cliente']."</td>";
                             echo "<td>".$fila['tenencia_arma_1']."</td>";
                             echo "<td>".$fila['tenencia_arma_2']."</td>";
-                            echo "<td>".$fila['tenencia_arma_2']."</td>";
+                            echo "<td>".$fila['tenencia_arma_3']."</td>";
                             echo "<td>".$fila['numero_licencia']."</td>";
                             echo "<td>".$fila['dpi_cliente']."</td>";
                             echo "<td>".$fila['nit_cliente']."</td>";
