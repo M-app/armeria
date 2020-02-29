@@ -132,7 +132,7 @@
                           $mysql = new conexion_db();
                           $conection = $mysql->get_conexion();
 
-                          $consulta = "call pscodproducto(".$_GET['link'].");";
+                          $consulta = "call psidcliente(".$_GET['link'].");";
 
                            $resultado = mysqli_query($conection,$consulta);
                            //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 

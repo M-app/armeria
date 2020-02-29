@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -147,7 +148,90 @@
                     <p class="card-description">
                       Información de Productos
                     </p>
-                    <?php 
+                    
+                          <?php 
+                          
+                          $mysql = new conexion_db();
+                          $conection = $mysql->get_conexion();
+
+                          $consulta = "call psidxnombres(".$_GET['link'].");";
+
+                           $resultado = mysqli_query($conection,$consulta);
+                           //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
+                           $num = mysqli_num_rows($resultado);
+                           $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                          // echo var_dump($num);
+                          for ($i=0; $i <$num; $i++) { 
+                            mysqli_data_seek($resultado, $i);
+                          $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+                            for ($j=1; $j <= $num; $j++) { 
+                                
+                            }
+                          }
+                          ?>
+
+                    <div class="row">
+                      
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Categoría</label>
+                          <div class="col-sm-9">
+                            <input type="text"  class="form-control" name="dato_categoria" 
+                            value="<?php 
+                              echo $fila['nombre_categoria'];
+                             ?>">
+                              
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Tipo Categoría</label>
+                          <div class="col-sm-9">
+                            <input id="selectCategoria" class="form-control" name="dato_categoria"
+                              value="<?php 
+                              echo $fila['nombre_tipo_arma'];
+                             ?>">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Marca</label>
+                          <div class="col-sm-9">
+                            <input type="text" id="selectMarca" class="form-control" name="dato_marca" 
+                            value="<?php 
+                              echo $fila['nombre_marca'];
+                             ?>">
+                              
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Modelo</label>
+                          <div class="col-sm-9">
+                            <input type="text" id="selectModelo" class="form-control" name="dato_modelo"
+                             value="<?php 
+                              echo $fila['nombre_modelo'];
+                             ?>">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Calibre</label>
+                          <div class="col-sm-9">
+                            <input type="text" id="selectCalibre" class="form-control" name="dato_calibre" 
+                            value="<?php 
+                              echo $fila['nombre_calibre'];
+                             ?>">
+                              
+                          </div>
+                        </div>
+                      </div>
+                      <?php 
                           
                           $mysql = new conexion_db();
                           $conection = $mysql->get_conexion();
@@ -167,163 +251,14 @@
                             }
                           }
                           ?>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Codigo de Producto</label>
-                          <div class="col-sm-9">
-                            <input id="productos" name="codigo_prod" type="text"  class="form-control" <?php 
-                              echo 'value="'.$fila['codigo_producto'].'"';
-                             ?>>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Categoría</label>
-                          <div class="col-sm-9">
-                            <input type="text"  class="form-control" name="dato_categoria" 
-                            <?php 
-                              echo 'value="'.$fila['nombre_producto'].'"';
-                             ?>>
-                              
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Tipo Categoría</label>
-                          <div class="col-sm-9">
-                            <input id="selectCategoria" class="form-control" name="dato_categoria"
-                              <?php 
-                                
-                                $mysql = new conexion_db();
-                                $conection = $mysql->get_conexion();
-
-                                $consulta = "select nombre_categoria from categoriaproducto c inner join producto p on c.id_categoria = p.id_categoria where p.id_producto=".$_GET['link'];
-
-                                 $resultado = mysqli_query($conection,$consulta);
-                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
-                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
-                                    echo "value=".$fila['nombre_categoria'] ;
-                                
-                              ?>>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Marca</label>
-                          <div class="col-sm-9">
-                            <select id="selectMarca" class="form-control" name="dato_marca">
-                              <option>Seleccionar</option>  
-              
-                             <?php 
-
-                                $mysql = new conexion_db();
-                                $conection = $mysql->get_conexion();
-
-                                $consulta = "SELECT id_marca,nombre_marca FROM marca";
-
-                                 $resultado = mysqli_query($conection,$consulta);
-                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
-                                 $num = mysqli_num_rows($resultado);
-                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
-                                // echo var_dump($num);
-                                  for ($i=0; $i <$num; $i++) { 
-                                  mysqli_data_seek($resultado, $i);
-                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
-                                    for ($j=1; $j <= $num; $j++) { 
-                                        
-                                    }              
-                                  //echo "<option>".$fila['nombre_marca']."</option>";
-                                  echo "<option identificador='"
-                                  .$fila['id_marca']."'>"
-                                  .$fila['nombre_marca']."</option>";
-                                }
-                              ?>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Modelo</label>
-                          <div class="col-sm-9">
-                            <select id="selectModelo" class="form-control" name="dato_modelo">
-                              <option>Seleccionar</option> 
-                                  
-                              <?php 
-
-                                $mysql = new conexion_db();
-                                $conection = $mysql->get_conexion();
-
-                                $consulta = "SELECT id_modelo,nombre_modelo FROM modelo";
-
-                                 $resultado = mysqli_query($conection,$consulta);
-                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
-                                 $num = mysqli_num_rows($resultado);
-                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
-                                // echo var_dump($num);
-                                  for ($i=0; $i <$num; $i++) { 
-                                  mysqli_data_seek($resultado, $i);
-                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
-                                    for ($j=1; $j <= $num; $j++) { 
-                                      
-                                    }                  
-                                  //echo "<option>".$fila['nombre_modelo']."</option>";
-                                  echo "<option identificador='"
-                                  .$fila['id_modelo']."'"
-                                  ." nombre ="
-                                  ."'"
-                                  .$fila['nombre_modelo']
-                                  ."'>"
-                                  .$fila['nombre_modelo']."</option>";
-                                }
-                               ?>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Calibre</label>
-                          <div class="col-sm-9">
-                            <select id="selectCalibre" class="form-control" name="dato_calibre">
-                              <option>Seleccionar</option>
-                               <?php 
-
-                                $mysql = new conexion_db();
-                                $conection = $mysql->get_conexion();
-
-                                $consulta = "SELECT id_calibre, nombre_calibre FROM calibre";
-
-                                 $resultado = mysqli_query($conection,$consulta);
-                                 //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
-                                 $num = mysqli_num_rows($resultado);
-                                 $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
-                                // echo var_dump($num);
-                                  for ($i=0; $i <$num; $i++) { 
-                                  mysqli_data_seek($resultado, $i);
-                                  $fila = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
-                                    for ($j=1; $j <= $num; $j++) { 
-                                      
-                                    }                  
-                                  echo "<option identificador='"
-                                  .$fila['nombre_calibre']."'>"
-                                  .$fila['nombre_calibre']."</option>";
-                                }
-                               ?>
-                             </select>
-                          </div>
-                        </div>
-                      </div>
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Nombre</label>
                           <div class="col-sm-9">
-                            <input type="text" id="nombre-producto" name="nombre_producto" class="form-control">
+                            <input type="text" id="nombre-producto" name="nombre_producto" class="form-control" value="<?php 
+                              echo $fila['nombre_producto'];
+                             ?>">
+                            
                           </div>
                         </div>
                       </div>
@@ -331,7 +266,9 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Descripción 1</label>
                           <div class="col-sm-9">
-                            <input type="text" name="descripcion_1" class="form-control">
+                            <input type="text" name="descripcion_1" class="form-control" value="<?php 
+                              echo $fila['descripcion'];
+                             ?>">
                           </div>
                         </div>
                       </div>
@@ -339,7 +276,9 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">No. Registro</label>
                           <div class="col-sm-9">
-                            <input type="text" name="numero_registro" class="form-control">
+                            <input type="text" name="numero_registro" class="form-control" value="<?php 
+                              echo $fila['numero_registro_producto'];
+                             ?>">
                           </div>
                         </div>
                       </div>
@@ -347,7 +286,9 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Disponibilidad</label>
                           <div class="col-sm-9">
-                            <input type="text" name="disponibilidad" class="form-control">
+                            <input type="text" name="disponibilidad" class="form-control" value="<?php 
+                              echo $fila['disponibilidad_producto'];
+                             ?>">
                           </div>
                         </div>
                       </div>
@@ -355,7 +296,9 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">No. Lote</label>
                           <div class="col-sm-9">
-                            <input type="text" name="lote" class="form-control">
+                            <input type="text" name="lote" class="form-control" value="<?php 
+                              echo $fila['numero_lote'];
+                             ?>">
                           </div>
                         </div>
                       </div>
@@ -363,7 +306,9 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Precio Compra</label>
                           <div class="col-sm-9">
-                            <input type="text" name="precio_compra" class="form-control">
+                            <input type="text" name="precio_compra" class="form-control" value="<?php 
+                              echo $fila['precio_compra'];
+                             ?>">
                           </div>
                         </div>
                       </div>
@@ -371,7 +316,20 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Precio Venta</label>
                           <div class="col-sm-9">
-                            <input type="text" name="precio_venta" class="form-control">
+                            <input type="text" name="precio_venta" class="form-control" value="<?php 
+                              echo $fila['precio_venta'];
+                             ?>">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Codigo de Producto</label>
+                          <div class="col-sm-9">
+                            <input id="productos" name="codigo_prod" type="text"  class="form-control"
+                            value="<?php 
+                              echo $fila['codigo_producto'];
+                             ?>"> 
                           </div>
                         </div>
                       </div>
