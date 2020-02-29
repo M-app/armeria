@@ -14,6 +14,8 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
@@ -40,7 +42,7 @@
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Buscar" aria-label="buscar" aria-describedby="buscar">
+              <input type="text" class="form-control" id="input-buscar" placeholder="Buscar" aria-label="buscar" aria-describedby="buscar">
             </div>
           </li>
         </ul>
@@ -298,7 +300,7 @@
                   <h4 class="card-title">Últimas Ventas</h4>
                   
                   <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="tabla-datos">
                       <thead>
                         <tr>
                           <th>
@@ -466,6 +468,9 @@
   <script src="../js/off-canvas.js"></script>
   <script src="../js/hoverable-collapse.js"></script>
   <script src="../js/template.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="../js/datatables.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="../js/file-upload.js"></script>

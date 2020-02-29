@@ -20,6 +20,8 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
@@ -46,7 +48,7 @@
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Buscar" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control" placeholder="Buscar" id="input-buscar" aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -139,7 +141,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Todas las marcas</h4>
                   <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="tabla-datos">
                       <thead>
                         <tr>
                           <th>
@@ -208,6 +210,9 @@
   <script src="../js/off-canvas.js"></script>
   <script src="../js/hoverable-collapse.js"></script>
   <script src="../js/template.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="../js/datatables.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="../js/file-upload.js"></script>
