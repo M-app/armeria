@@ -210,7 +210,7 @@
                             echo "<td>".$fila['nit_cliente']."</td>";
                             echo "<td>".$fila['telefono_cliente']."</td>";
                             echo"<td><a  href='../templates/modify/prueba_modificar_cliente.php?link=".$fila['id_cliente']."'>Modificar</a><br>
-                                  <a href='/eliminar/cliente/".$fila['id_cliente']."'>Eliminar</a></td></tr>";
+                                  <a href='../public/remove/remove_cliente.php?link=".$fila['id_cliente']."'>Eliminar</a></td></tr>";
                           }
                          ?>
 

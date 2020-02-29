@@ -502,7 +502,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </di  v>
                     <button type="submit" class="btn btn-primary mr-2">Listo</button>
                   </form>
                 </div>

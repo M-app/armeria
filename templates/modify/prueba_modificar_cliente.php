@@ -123,7 +123,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Por favor, ingresar los datos en el formulario</h4>
-                  <form class="form-sample" action="../../public/updates/prueba.php" method="POST">
+                  <form class="form-sample" action="../../public/updates/insert_update/insert_update_cliente.php" method="POST">
                     <p class="card-description">
                       Información Personal
                     </p>
@@ -150,9 +150,9 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Codigo de cliente nuevo</label>
+                          <label class="col-sm-3 col-form-label">Codigo de cliente</label>
                           <div class="col-sm-9">
-                            <input type="number" class="form-control" readonly="readonly"
+                            <input type="number" name="cod_cliente" class="form-control" 
                             <?php 
                               echo 'value="'.$fila['id_cliente'].'"';
                              ?>
@@ -369,7 +369,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Calibre 1</label>
                           <div class="col-sm-9">
-                            <input type="text" name="calibre" class="form-control" value="<?php echo $fila['calibre_identificacion_1'];?>">
+                            <input type="text" name="calibre_1" class="form-control" value="<?php echo $fila['calibre_identificacion_1'];?>">
                           </div>
                         </div>
                       </div>
@@ -377,7 +377,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Calibre 2</label>
                           <div class="col-sm-9">
-                            <input type="text" name="calibre" class="form-control" value="<?php echo $fila['calibre_identificacion_2'];?>">
+                            <input type="text" name="calibre_2" class="form-control" value="<?php echo $fila['calibre_identificacion_2'];?>">
                           </div>
                         </div>
                       </div>
@@ -385,7 +385,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Calibre 3</label>
                           <div class="col-sm-9">
-                            <input type="text" name="calibre" class="form-control" value="<?php echo $fila['calibre_identificacion_3'];?>">
+                            <input type="text" name="calibre_3" class="form-control" value="<?php echo $fila['calibre_identificacion_3'];?>">
                           </div>
                         </div>
                       </div>
