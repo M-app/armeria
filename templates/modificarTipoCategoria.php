@@ -1,6 +1,6 @@
 <?php 
   require_once('../public/conexion.php');
-  require_once('../public/conteo_id_tipo_categoria.php');
+  require_once('../public/conteos/conteo_id_tipo_categoria.php');
  ?>
 
 <!DOCTYPE html>
@@ -133,7 +133,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Por favor, ingresar los datos en el formulario</h4>
-                  <form class="form-sample" action="../public/insertar_tipo_categoria.php" method="POST" >
+                  <form class="form-sample" action="../public/inserts/insertar_tipo_categoria.php" method="POST" >
                     <p class="card-description">
                       Información de Categoría
                     </p>

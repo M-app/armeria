@@ -143,8 +143,8 @@
           <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Por favor, ingresar los datos en el formulario</h4>
-                  <form class="form-sample" action="" method="POST">
+                  <h4 class="card-title"> <STRONG>MODIFIQUE LOS CAMPOS NECESARIOS</STRONG></h4>
+                  <form class="form-sample" action="../../public/updates/insert_update/insert_update_producto.php" method="POST">
                     <p class="card-description">
                       Información de Productos
                     </p>
@@ -171,15 +171,26 @@
                           ?>
 
                     <div class="row">
-                      
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">ID Producto</label>
+                          <div class="col-sm-9">
+                            <input type="number" name="id_producto"  class="form-control"  
+                              <?php 
+                                echo 'value="'.$fila['id_producto'].'"';
+                              ?>>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Categoría</label>
                           <div class="col-sm-9">
-                            <input type="text"  class="form-control" name="dato_categoria" 
+                            <input type="text" name="dato_categoria"  class="form-control"  
                             value="<?php 
                               echo $fila['nombre_categoria'];
-                             ?>">
+                             ?>" >
                               
                             </select>
                           </div>
@@ -189,10 +200,10 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tipo Categoría</label>
                           <div class="col-sm-9">
-                            <input id="selectCategoria" class="form-control" name="dato_categoria"
+                            <input id="selectCategoria" name="dato_tipo_categoria" class="form-control" 
                               value="<?php 
                               echo $fila['nombre_tipo_arma'];
-                             ?>">
+                             ?>" >
                           </div>
                         </div>
                       </div>
@@ -200,7 +211,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Marca</label>
                           <div class="col-sm-9">
-                            <input type="text" id="selectMarca" class="form-control" name="dato_marca" 
+                            <input type="text" name="dato_marca"  id="selectMarca" class="form-control" 
                             value="<?php 
                               echo $fila['nombre_marca'];
                              ?>">
@@ -212,7 +223,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Modelo</label>
                           <div class="col-sm-9">
-                            <input type="text" id="selectModelo" class="form-control" name="dato_modelo"
+                            <input type="text" name="dato_modelo" id="selectModelo" class="form-control" 
                              value="<?php 
                               echo $fila['nombre_modelo'];
                              ?>">
@@ -223,7 +234,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Calibre</label>
                           <div class="col-sm-9">
-                            <input type="text" id="selectCalibre" class="form-control" name="dato_calibre" 
+                            <input type="text" name="dato_calibre" id="selectCalibre" class="form-control" 
                             value="<?php 
                               echo $fila['nombre_calibre'];
                              ?>">
@@ -266,7 +277,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Descripción 1</label>
                           <div class="col-sm-9">
-                            <input type="text" name="descripcion_1" class="form-control" value="<?php 
+                            <input type="text" name="descripcion" class="form-control" value="<?php 
                               echo $fila['descripcion'];
                              ?>">
                           </div>

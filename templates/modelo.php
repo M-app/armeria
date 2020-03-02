@@ -128,8 +128,8 @@
                   <div class="mr-md-3 mr-xl-5">
                     <h2>Modelos</h2>
                     <a type="button" class="btn btn-success" href="modificarModelo.php">Nuevo</a>
-                    <a type="button" class="btn btn-warning" href="modificarModelo.php">Modificar</a>
-                    <a type="button" class="btn btn-danger" href="modificarModelo.php">Eliminar</a>
+                    <!-- <a type="button" class="btn btn-warning" href="modificarModelo.php">Modificar</a>
+                    <a type="button" class="btn btn-danger" href="modificarModelo.php">Eliminar</a> -->
                   </div>
                 </div>
               </div>
@@ -177,8 +177,7 @@
 
                             echo"<tr><td>".$fila['id_modelo']."</td></p>";                   
                             echo "<td>".$fila['nombre_modelo']."</td>";
-                            echo"<td><a href='/modificar/modelo/".$fila['id_modelo']."'>Modificar</a><br>
-                                  <a href='/eliminar/modelo/".$fila['id_modelo']."'>Eliminar</a></td></tr>";
+                            echo"<td><a href='../public/remove/remove_modelo.php?link=".$fila['id_modelo']."'>Eliminar</a></td></tr>";
                           }
                          ?>
                       </tbody>

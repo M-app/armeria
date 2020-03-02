@@ -10,7 +10,7 @@
     public $departamento_cliente;
     public $municipio_cliente;
     public $zona_cliente;
-      public $direccion_cliente;
+    public $direccion_cliente;
     public $telefono_cliente;
     public $correo_cliente;
     public $contacto_cliente;
@@ -25,7 +25,7 @@
     public $tenencia_3;
     public $calibre_1;
     public $calibre_2;
-      public $calibre_3;  
+    public $calibre_3;  
     
 
 
