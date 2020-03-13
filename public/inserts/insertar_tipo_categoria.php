@@ -1,6 +1,6 @@
 <?php 
-	require_once('../public/gets/get_tipo_categoria.php');
-	require_once('../public/conexion.php');
+	require_once('../gets/get_tipo_categoria.php');
+	require_once('../conexion.php');
  	//obtenemos los datos del formulario
 	 $mostrar = new get_tipo_categoria();
 	 //creamos un nuevo objeto para la conexion

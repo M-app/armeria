@@ -128,8 +128,8 @@
                   <div class="mr-md-3 mr-xl-5">
                     <h2>Tipos de Categoría</h2>
                     <a type="button" href="modificarTipoCategoria.php" class="btn btn-success">Nueva</a>
-                    <a type="button" href="modificarTipoCategoria.php" class="btn btn-warning">Modificar</a>
-                    <a type="button" href="modificarTipoCategoria.php" class="btn btn-danger">Eliminar</a>
+                   <!--  <a type="button" href="modificarTipoCategoria.php" class="btn btn-warning">Modificar</a>
+                   <a type="button" href="modificarTipoCategoria.php" class="btn btn-danger">Eliminar</a> -->
                   </div>
                 </div>
               </div>
@@ -181,8 +181,7 @@
                             echo"<tr><td>".$fila['id_tipo_categoria']."</td></p>";
                             echo "<td>".$fila['nombre_tipo_arma']."</td>";
                             echo"<td>".$fila['id_categoria']."</td>";
-                            echo"<td><a href='/modificar/tipo_categoria/".$fila['id_tipo_categoria']."'>Modificar</a>
-                                  <a href='/eliminar/tipo_categoria/".$fila['id_tipo_categoria']."'>Eliminar</a></td></tr>";
+                            echo"<td><a href='../public/remove/remove_tipo_categoria.php?link=".$fila['id_tipo_categoria']."'>Eliminar</a></td></tr>";
                           }
                          ?>                        
                       </tbody>

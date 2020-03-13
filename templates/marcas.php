@@ -128,8 +128,8 @@
                   <div class="mr-md-3 mr-xl-5">
                     <h2>Marcas</h2>
                     <a type="button" href="modificarMarca.php" class="btn btn-success">Nueva</a>
-                    <a type="button" href="modificarMarca.php" class="btn btn-warning">Modificar</a>
-                    <a type="button" href="modificarMarca.php" class="btn btn-danger">Eliminar</a>
+                    <!-- <a type="button" href="modificarMarca.php" class="btn btn-warning">Modificar</a>
+                    <a type="button" href="modificarMarca.php" class="btn btn-danger">Eliminar</a> -->
                   </div>
                 </div>
               </div>
@@ -177,8 +177,7 @@
 
                             echo"<tr><td>".$fila['id_marca']."</td></p>";                   
                             echo "<td>".$fila['nombre_marca']."</td>";
-                            echo"<td><a href='/modificar/marca/".$fila['id_marca']."'>Modificar</a><br>
-                                  <a href='/eliminar/marca/".$fila['id_marca']."'>Eliminar</a></td></tr>";
+                            echo"<td><a href='../public/remove/remove_marca.php?link=".$fila['id_marca']."'>Eliminar</a></td></tr>";
                           }
                          ?>
                       </tbody>

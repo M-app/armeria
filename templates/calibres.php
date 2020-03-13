@@ -127,8 +127,8 @@
                   <div class="mr-md-3 mr-xl-5">
                     <h2>Calibres</h2>
                     <a type="button" href="modificarCalibre.php"  class="btn btn-success">Nuevo</a>
-                    <a type="button" href="modificarCalibre.php"class="btn btn-warning">Modificar</a>
-                    <a type="button" href="modificarCalibre.php" class="btn btn-danger">Eliminar</a>
+                    <!-- <a type="button" href="modificarCalibre.php"class="btn btn-warning">Modificar</a>
+                    <a type="button" href="modificarCalibre.php" class="btn btn-danger">Eliminar</a> -->
                   </div>
                 </div>
               </div>
@@ -176,8 +176,7 @@
 
                             echo"<tr><td>".$fila['id_calibre']."</td></p>";                   
                             echo "<td>".$fila['nombre_calibre']."</td>";
-                            echo"<td><a href='/modificar/calibre/".$fila['id_calibre']."'>Modificar</a><br>
-                                  <a href='/eliminar/calibre/".$fila['id_calibre']."'>Eliminar</a></td></tr>";
+                            echo"<td><a href='../public/remove/remove_calibre.php?link=".$fila['id_calibre']."'>Eliminar</a></td></tr>";
                           }
                          ?>
                       </tbody>

@@ -129,8 +129,8 @@
                   <div class="mr-md-3 mr-xl-5">
                     <h2>Productos</h2>
                     <a type="button" href="modificarProducto.php" class="btn btn-success">Nuevo</a>
-                    <a type="button" href="modificarProducto.php" class="btn btn-warning">Modificar</a>
-                    <a type="button" href="modificarProducto.php" class="btn btn-danger">Eliminar</a>
+                    <!-- <a type="button" href="modificarProducto.php" class="btn btn-warning">Modificar</a>
+                    <a type="button" href="modificarProducto.php" class="btn btn-danger">Eliminar</a> -->
                   </div>
                 </div>
               </div>
@@ -146,7 +146,7 @@
                       <thead>
                         <tr>
                           <th>
-                            ID
+                            Código producto
                           </th>
                           <th>
                             Nombre
@@ -158,10 +158,10 @@
                             Disponibilidad
                           </th>
                           <th>
-                            Precio Compra
+                            Precio Venta
                           </th>
                           <th>
-                            Precio Venta
+                            Precio Compra
                           </th>
                           <th>
                             Descripción 1
@@ -177,7 +177,7 @@
                           $mysql = new conexion_db();
                           $conection = $mysql->get_conexion();
 
-                          $consulta = "SELECT codigo_producto, nombre_producto, numero_registro_producto, disponibilidad_producto, precio_compra, precio_venta, descripcion FROM producto";
+                          $consulta = "SELECT id_producto,codigo_producto, nombre_producto, numero_registro_producto, disponibilidad_producto, precio_compra, precio_venta, descripcion FROM producto";
 
                            $resultado = mysqli_query($conection,$consulta);
                            //$datos_cliente = mysqli_fetch_array($resultado,MYSQLI_NUM); 
@@ -198,8 +198,8 @@
                             echo"<td>Q.".$fila['precio_venta']."</td>";                   
                             echo "<td>Q.".$fila['precio_compra']."</td>";
                             echo "<td>".$fila['descripcion']."</td>";
-                            echo"<td><a href='/modificar/producto/".$fila['codigo_producto']."'>Modificar</a><br>
-                                  <a href='/eliminar/producto/".$fila['codigo_producto']."'>Eliminar</a></td></tr>";
+                            echo"<td><a href='../templates/modify/modificar_Producto.php?link=".$fila['id_producto']."'>Modificar</a><br>
+                                  <a href='../public/remove/remove_producto.php?link=".$fila['id_producto']."'>Eliminar</a></td></tr>";
                           }
                          ?>
                       </tbody>
