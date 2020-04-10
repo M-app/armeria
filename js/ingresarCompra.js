@@ -66,7 +66,8 @@ new Vue({
 			precio_compra : '2500',
 			precio_venta : '5000',
 		}],
-		detalle_compra : []
+		detalle_compra : [],
+		total : 0
 	},
 	methods : {
 		agregarDetalleCompra(dato){
@@ -85,19 +86,49 @@ new Vue({
 					precio : dato.precio
 				});	
 			}
-			
+			this.calcularTotal();
 		},
 		actualizarCantidad(cod){
-			var cantidad = event.target.value;
-			if (cantidad <= 0) {
-				cantidad = 1;
-			}
-			for (var i in this.detalle_compra){
-				if (this.detalle_compra[i].codigo === cod) {
-					this.detalle_compra[i].cantidad = cantidad;
-					break;
+			if (event.target.value.length != 0) {
+				var cantidad = event.target.value;
+				if (cantidad <= 0) {
+					cantidad = 1;
 				}
+				for (var i in this.detalle_compra){
+					if (this.detalle_compra[i].codigo === cod) {
+						this.detalle_compra[i].cantidad = cantidad;
+						break;
+					}
+				}
+				this.calcularTotal();
 			}
+		},
+		actualizarPrecio(cod){
+			if (event.target.value.length != 0) {
+				var precio = event.target.value;
+				if (precio <= 0) {
+					precio = 1;
+				}
+				for (var i in this.detalle_compra){
+					if (this.detalle_compra[i].codigo === cod) {
+						this.detalle_compra[i].precio = precio;
+						break;
+					}
+				}
+				this.calcularTotal();
+			}
+		},
+		calcularTotal(){
+			var subTotal = 0;
+			for (var i in this.detalle_compra){
+				subTotal += 
+				this.detalle_compra[i].cantidad * 
+				this.detalle_compra[i].precio;
+			}
+			this.total = subTotal;
+		},
+		eliminarDetalleCompra(dato){
+			this.detalle_compra.splice(this.detalle_compra.indexOf(dato),1);
 		}
 	}
 });
