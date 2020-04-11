@@ -141,7 +141,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr v-for="compra in compras" @click="mostrarDetalle(compra.codigo); mostrarDatosCompra(compra)">
+                                                <tr v-for="compra in compras" @click="mostrarDatosCompra(compra); mostrarDetalle(compra.codigo); ">
                                                     <td class="py-1">
                                                         {{compra.codigo}}
                                                     </td>
@@ -240,19 +240,22 @@
                                           </thead>
                                           <tbody>
                                               <tr v-for="detalle in detalle_seleccionado">
-                                                  <td class="py-1">
+                                                  <td class="py-1" @click="eliminarDetalle(detalle.codigo)"
+                                                  style="color:red;">
                                                     {{detalle.codigo}}
                                                   </td>
                                                   <td >
                                                       {{detalle.nombre}}
                                                   </td>
                                                   <td>
-                                                      <input type="number" class="form-control" 
-                                                      v-bind:value="detalle.cantidad">
+                                                      <input type="number" class="form-control" style="padding: 4px 4px;"
+                                                      v-model="detalle.cantidad"
+                                                      @keyup.enter="calcularSubTotal(detalle.codigo)">
                                                   </td>
                                                   <td>
-                                                      <input type="number" class="form-control" 
-                                                      v-bind:value="detalle.precio">
+                                                      <input type="number" class="form-control" style="padding: 4px 4px;"
+                                                      v-model="detalle.precio"
+                                                      @keyup.enter="calcularSubTotal(detalle.codigo)">
                                                   </td>
                                                   <td>
                                                     {{detalle.total}}
@@ -262,8 +265,10 @@
                                       </table>
                                   </div>
                                   <h4 class="card-title text-danger">Total</h4>
-                                    <span style="font-size:40px; font-weight: 900; margin-right: 32px;">{{compra_seleccionada.total}}</span>
-                                    <button class="btn btn-outline-danger btn-lg" data-toggle="modal" data-target="#exampleModal">Comprar</button>
+                                    <span style="font-size:40px; font-weight: 900;">{{compra_seleccionada.total}}</span>
+                                    <br>
+                                    <button class="btn btn-outline-warning btn-lg">Modificar Compra</button>
+                                    <button class="btn btn-outline-danger btn-lg">Anular Compra</button>
                                     
                               </div>
                           </div>
