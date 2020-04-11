@@ -66,11 +66,11 @@ new Vue ({
         detalle_compra : {
             1 : [
                 {
-                    codigo : '3754',
-                    nombre : 'Arma Corta',
-                    cantidad : '3',
-                    precio : '2500',
-                    total : 7500
+                    'codigo' : '3754',
+                    'nombre' : 'Arma Corta',
+                    'cantidad' : '3',
+                    'precio' : '2500',
+                    'total' : 7500
                 },
                 {
                     'codigo' : '3758',
@@ -161,13 +161,29 @@ new Vue ({
             this.compra_seleccionada = compra;
             this.proveedor_seleccionado = compra.proveedor;
         },
+        eliminarDetalle(codigoDetalle){
+            var itemEliminar = {};
+            this.detalle_seleccionado.forEach(function(item){
+                if(item.codigo == codigoDetalle){
+                    itemEliminar = item;
+                }
+            });
+            var index = this.detalle_seleccionado.indexOf(itemEliminar);
+            this.detalle_seleccionado.splice(index,1);
+        },
+        calcularSubTotal(codigoDetalle){
+            this.detalle_seleccionado.forEach(function(item){
+                if(item.codigo == codigoDetalle){
+                    item.total = item.precio * item.cantidad;
+                }
+            });
+            this.calcularTotal();  
+        },
         calcularTotal(){
             total = 0;
             this.detalle_seleccionado.forEach(function(item){
                 total += item.total;
             });
-            //console.log(this.detalle_seleccionado[0].total);
-            //console.log(total);
             this.compra_seleccionada.total = total;
         }
     }
